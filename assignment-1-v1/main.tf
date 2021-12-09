@@ -283,8 +283,8 @@ resource "aws_db_instance" "default" {
   engine_version         = "8.0.23"
   instance_class         = "db.t3.micro"
   name                   = "aravinddb"
-  username               = "aravind"
-  password               = "aravind4"
+  username               = ""
+  password               = ""
   port                   = "3306"
   db_subnet_group_name   = aws_db_subnet_group.aravind_subnet_group.name
   skip_final_snapshot    = true
