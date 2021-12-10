@@ -8,11 +8,6 @@ variable "key_name" {
   default = "aravindakrishan_keypair"
 }
 
-variable "ami_id" {
-  type    = string
-  default = "ami-0ed9277fb7eb570c9"
-}
-
 variable "vpc_cidr" {
   type    = string
   default = "10.0.0.0/16"
