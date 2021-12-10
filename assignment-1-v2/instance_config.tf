@@ -1,7 +1,7 @@
 # instances
 resource "aws_instance" "aravind_server" {
   count                       = length(aws_subnet.aravind_pubsubnet)
-  ami                         = var.ami_id
+  ami                         = data.aws_ami.web_ami.id
   instance_type               = "t2.micro"
   key_name                    = var.key_name
   associate_public_ip_address = true
@@ -14,3 +14,11 @@ resource "aws_instance" "aravind_server" {
     author = "akrishnanh@presidio.com"
   }
 }
+
+data "aws_ami" "web_ami"{
+  most_recent = true
+  owner = ["amazon"]
+  filter {
+      name = "name"
+      values = ["amzn2-ami-hvm*"]
+  }
